@@ -19,21 +19,21 @@ function generateGrid() {
 
     for (let i = 0; i < 16; i++) {
         
-        let div = document.createElement("div");
-        div.classList.add("grid");
+        let outerDiv = document.createElement("div");
+        outerDiv.classList.add("grid");
 
-        container.appendChild(div);
+        container.appendChild(outerDiv);
 
         for (let j = 0; j < 16; j++) {
 
-            let div = document.createElement("div");
-            div.classList.add("grid");
+            let innerDiv = document.createElement("div");
+            innerDiv.classList.add("grid");
 
-            div.addEventListener("mouseover", function() {
-                div.style.backgroundColor = `${generateRandomHex()}`;
+            innerDiv.addEventListener("mouseover", function() {
+                innerDiv.style.backgroundColor = `${generateRandomHex()}`;
             })
 
-            container.appendChild(div);
+            outerDiv.appendChild(innerDiv);
         }
     }
 }
