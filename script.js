@@ -16,11 +16,10 @@ function generateGrid() {
             div.classList.add("grid");
 
             container.appendChild(div);
-
         }
-
     }
-
 }
+
+
 
 generateGrid();
