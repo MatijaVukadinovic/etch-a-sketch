@@ -20,6 +20,18 @@ function generateGrid() {
     }
 }
 
+function generateRandomNumber() {
+    return Math.floor(Math.random() * hex.length);
+};
 
+function generateRandomHex() {
+
+    let hexColor = "#";
+    for (let i = 0; i < 6; i++) {
+        hexColor += hex[generateRandomNumber()];
+    }
+    
+    return hexColor;
+};
 
 generateGrid();
