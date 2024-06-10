@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const sizeBtn = document.querySelector(".sizeBtn");
 const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
 function generateRandomNumber() {
@@ -37,5 +38,13 @@ function generateGrid() {
         }
     }
 }
+
+/*
+sizeBtn.addEventListener("click", function() {
+    let int = prompt ("Enter the grid size", "16")
+    let gridSize = parseInt(int);
+
+    return gridSize;
+}) */
 
 generateGrid();
