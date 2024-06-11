@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 const sizeBtn = document.querySelector(".sizeBtn");
 const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
-let gridSize = 16; 
+let gridSize = 16;  
 
 sizeBtn.addEventListener("click", function() {
     let int = prompt("Enter the grid size", "16");
@@ -31,22 +31,21 @@ function generateGrid() {
 
     container.innerHTML = '';
 
-    for (let i = 0; i < gridSize; i++) {
-        let outerDiv = document.createElement("div");
-        outerDiv.classList.add("grid");
+    const cellSize = 500 / gridSize;
 
-        container.appendChild(outerDiv);
+    container.style.gridTemplateColumns = `repeat(${gridSize}, ${cellSize}px)`;
+    container.style.gridTemplateRows = `repeat(${gridSize}, ${cellSize}px)`;
 
-        for (let j = 0; j < gridSize; j++) {
-            let innerDiv = document.createElement("div");
-            innerDiv.classList.add("grid");
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        
+        let gridElement = document.createElement("div");
+        gridElement.classList.add("grid");
 
-            innerDiv.addEventListener("mouseover", function() {
-                innerDiv.style.backgroundColor = `${generateRandomHex()}`;
-            });
+        gridElement.addEventListener("mouseover", function() {
+            gridElement.style.backgroundColor = `${generateRandomHex()}`;
+        });
 
-            outerDiv.appendChild(innerDiv);
-        }
+        container.appendChild(gridElement);
     }
 }
 
