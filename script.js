@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const sizeBtn = document.querySelector(".sizeBtn");
+const colorBtn = document.querySelector(".colorBtn")
 const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 let gridSize = 16;  
 
@@ -42,7 +43,7 @@ function generateGrid() {
         gridElement.classList.add("grid");
 
         gridElement.addEventListener("mouseover", function() {
-            gridElement.style.backgroundColor = `${generateRandomHex()}`;
+            gridElement.style.backgroundColor = `${colorBtn.value}`;
         });
 
         container.appendChild(gridElement);
